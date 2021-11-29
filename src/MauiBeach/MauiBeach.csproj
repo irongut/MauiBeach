@@ -10,10 +10,10 @@
 		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
 
 		<!-- Display name -->
-		<ApplicationTitle>MauiBeach</ApplicationTitle>
+		<ApplicationTitle>Maui Beach</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.MauiBeach</ApplicationId>
+		<ApplicationId>com.taranissoftware.MauiBeach</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationVersion>1</ApplicationVersion>
@@ -30,13 +30,10 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon
-			Include="Resources\appicon.svg"
-			ForegroundFile="Resources\appiconfg.svg"
-			Color="#512BD4" />
+		<MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\wave_icon.svg" Color="#BF616A" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" />
+		<MauiSplashScreen Include="Resources\wave_splash.svg" Color="#BF616A" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -49,6 +46,12 @@
 		<!-- Required - WinUI does not yet have buildTransitive for everything -->
 		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0-preview3" />
 		<PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.0.29-preview3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Resources\Styles\DefaultTheme.xaml">
+	    <Generator></Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 	<PropertyGroup Condition="$(TargetFramework.Contains('-windows'))">
