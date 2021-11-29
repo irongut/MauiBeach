@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+[Rr]esource.designer.cs
+*cert.der
+
 # User-specific files
 *.rsuser
 *.suo
@@ -126,6 +129,9 @@ $tf/
 _ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
+
+# JustCode is a .NET coding add-in
+.JustCode
 
 # TeamCity is a build add-in
 _TeamCity*
@@ -299,6 +305,10 @@ paket-files/
 # FAKE - F# Make
 .fake/
 
+# JetBrains Rider
+.idea/
+*.sln.iml
+
 # CodeRush personal settings
 .cr/personal
 
@@ -342,9 +352,21 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/builds
 
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# Azure Functions localsettings file
+local.settings.json
+
+# DocFX
+docfx_project/api/.manifest
+docfx_project/api/*.yml
+docs
+
+# VS Code
+.vscode
