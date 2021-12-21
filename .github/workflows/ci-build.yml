@@ -1,0 +1,137 @@
+name: CI Build
+
+on:
+  push:
+    branches: [ master ]
+    paths-ignore:
+      - '**/*.md'
+      - '**/*.gitignore'
+      - '**/*.gitattributes'
+  pull_request_target:
+    branches: [ master ]
+  workflow_dispatch:
+permissions:
+  contents: read
+
+env:
+  DOTNET_NOLOGO: true                     # Disable the .NET logo
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true # Disable the .NET first time experience
+  DOTNET_CLI_TELEMETRY_OPTOUT: true       # Disable sending .NET CLI telemetry
+
+jobs:
+# MAUI Android Build
+  build-android:
+    runs-on: windows-latest
+    name: Android Build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup .NET 6
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Install MAUI Android
+        run: dotnet workload install android --ignore-failed-sources
+
+      - name: Restore Dependencies
+        run: dotnet restore src/MauiBeach/MauiBeach.csproj
+
+      - name: Build MAUI Android
+        run: dotnet build src/MauiBeach/MauiBeach.csproj -c Release -f net6.0-android --no-restore
+
+      - name: Upload Android Artifact
+        uses: actions/upload-artifact@v2.3.1
+        with:
+          name: android-ci-build
+          path: src/MauiBeach/bin/Release/net6.0-android/*Signed.aab
+
+# MAUI Windows Build
+  build-windows:
+    runs-on: windows-latest
+    name: Windows Build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup .NET 6
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1.1
+        with:
+          vs-prerelease: true
+        
+      - name: Install MAUI
+        run: dotnet workload install maui --ignore-failed-sources
+
+      - name: Restore Dependencies
+        run: dotnet restore src/MauiBeach/MauiBeach.csproj
+
+      - name: Build MAUI Windows
+        run: msbuild src/MauiBeach/MauiBeach.csproj -r -p:Configuration=Release -p:TargetFramework=net6.0-windows10.0.19041
+
+      - name: Upload Windows Artifact
+        uses: actions/upload-artifact@v2.3.1
+        with:
+          name: windows-ci-build
+          path: src/MauiBeach/bin/Release/net6.0-windows*/**/*.msix
+
+# MAUI iOS Build
+  build-ios:
+    runs-on: macos-11
+    name: iOS Build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup .NET 6
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Install MAUI iOS
+        run: dotnet workload install ios --ignore-failed-sources
+
+      - name: Restore Dependencies
+        run: dotnet restore src/MauiBeach/MauiBeach.csproj
+
+      - name: Build MAUI iOS
+        run: dotnet build src/MauiBeach/MauiBeach.csproj -c Release -f net6.0-ios --no-restore
+
+      - name: Upload iOS Artifact
+        uses: actions/upload-artifact@v2.3.1
+        with:
+          name: ios-ci-build
+          path: src/MauiBeach/bin/Release/net6.0-ios/*.app/
+
+# MAUI MacCatalyst Build
+  build-mac:
+    runs-on: macos-11
+    name: MacCatalyst Build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup .NET 6
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
+
+      - name: Install MAUI MacCatalyst
+        run: dotnet workload install maccatalyst --ignore-failed-sources
+
+      - name: Restore Dependencies
+        run: dotnet restore src/MauiBeach/MauiBeach.csproj
+
+      - name: Build MAUI MacCatalyst
+        run: dotnet build src/MauiBeach/MauiBeach.csproj -c Release -f net6.0-maccatalyst --no-restore
+
+      - name: Upload MacCatalyst Artifact
+        uses: actions/upload-artifact@v2.3.1
+        with:
+          name: macos-ci-build
+          path: src/MauiBeach/bin/Release/net6.0-maccatalyst/*.app/
