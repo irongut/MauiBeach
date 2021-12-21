@@ -32,8 +32,12 @@ jobs:
         with:
           dotnet-version: 6.0.x
 
-      - name: Install MAUI Android
-        run: dotnet workload install android --ignore-failed-sources
+      - name: Install MAUI Workloads
+        run: |
+          dotnet workload install android --ignore-failed-sources
+          dotnet workload install ios --ignore-failed-sources
+          dotnet workload install maccatalyst --ignore-failed-sources
+          dotnet workload install maui --ignore-failed-sources
 
       - name: Restore Dependencies
         run: dotnet restore src/MauiBeach/MauiBeach.csproj
@@ -65,8 +69,12 @@ jobs:
         with:
           vs-prerelease: true
         
-      - name: Install MAUI
-        run: dotnet workload install maui --ignore-failed-sources
+      - name: Install MAUI Workloads
+        run: |
+          dotnet workload install android --ignore-failed-sources
+          dotnet workload install ios --ignore-failed-sources
+          dotnet workload install maccatalyst --ignore-failed-sources
+          dotnet workload install maui --ignore-failed-sources
 
       - name: Restore Dependencies
         run: dotnet restore src/MauiBeach/MauiBeach.csproj
@@ -93,8 +101,12 @@ jobs:
         with:
           dotnet-version: 6.0.x
 
-      - name: Install MAUI iOS
-        run: dotnet workload install ios --ignore-failed-sources
+      - name: Install MAUI Workloads
+        run: |
+          dotnet workload install android --ignore-failed-sources
+          dotnet workload install ios --ignore-failed-sources
+          dotnet workload install maccatalyst --ignore-failed-sources
+          dotnet workload install maui --ignore-failed-sources
 
       - name: Restore Dependencies
         run: dotnet restore src/MauiBeach/MauiBeach.csproj
@@ -121,8 +133,12 @@ jobs:
         with:
           dotnet-version: 6.0.x
 
-      - name: Install MAUI MacCatalyst
-        run: dotnet workload install maccatalyst --ignore-failed-sources
+      - name: Install MAUI Workloads
+        run: |
+          dotnet workload install android --ignore-failed-sources
+          dotnet workload install ios --ignore-failed-sources
+          dotnet workload install maccatalyst --ignore-failed-sources
+          dotnet workload install maui --ignore-failed-sources
 
       - name: Restore Dependencies
         run: dotnet restore src/MauiBeach/MauiBeach.csproj
