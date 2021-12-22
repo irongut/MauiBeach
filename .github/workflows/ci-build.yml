@@ -31,6 +31,12 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 6.0.x
+          include-prerelease: true
+          
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'microsoft'
+          java-version: '11'
 
       - name: Install MAUI Workloads
         run: |
@@ -63,6 +69,7 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 6.0.x
+          include-prerelease: true
 
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1.1
@@ -100,6 +107,7 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 6.0.x
+          include-prerelease: true
 
       - name: Install MAUI Workloads
         run: |
@@ -118,7 +126,7 @@ jobs:
         uses: actions/upload-artifact@v2.3.1
         with:
           name: ios-ci-build
-          path: src/MauiBeach/bin/Release/net6.0-ios/*.app/
+          path: src/MauiBeach/bin/Release/net6.0-ios/**/*.app/
 
 # MAUI MacCatalyst Build
   build-mac:
@@ -132,6 +140,7 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 6.0.x
+          include-prerelease: true
 
       - name: Install MAUI Workloads
         run: |
@@ -150,4 +159,4 @@ jobs:
         uses: actions/upload-artifact@v2.3.1
         with:
           name: macos-ci-build
-          path: src/MauiBeach/bin/Release/net6.0-maccatalyst/*.app/
+          path: src/MauiBeach/bin/Release/net6.0-maccatalyst/**/*.app/
