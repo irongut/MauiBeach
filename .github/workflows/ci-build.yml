@@ -21,7 +21,7 @@ env:
 jobs:
 # MAUI Android Build
   build-android:
-    runs-on: windows-latest
+    runs-on: windows-2022
     name: Android Build
     steps:
       - name: Checkout
@@ -59,7 +59,7 @@ jobs:
 
 # MAUI Windows Build
   build-windows:
-    runs-on: windows-latest
+    runs-on: windows-2022
     name: Windows Build
     steps:
       - name: Checkout
