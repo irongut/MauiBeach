@@ -7,7 +7,7 @@ on:
       - '**/*.md'
       - '**/*.gitignore'
       - '**/*.gitattributes'
-  pull_request_target:
+  pull_request:
     branches: [ master ]
   workflow_dispatch:
 permissions:
@@ -55,7 +55,7 @@ jobs:
         uses: actions/upload-artifact@v2.3.1
         with:
           name: android-ci-build
-          path: src/MauiBeach/bin/Release/net6.0-android/*Signed.aab
+          path: src/MauiBeach/bin/Release/net6.0-android/*Signed.a*
 
 # MAUI Windows Build
   build-windows:
@@ -87,7 +87,7 @@ jobs:
         run: dotnet restore src/MauiBeach/MauiBeach.csproj
 
       - name: Build MAUI Windows
-        run: msbuild src/MauiBeach/MauiBeach.csproj -r -p:Configuration=Release -p:TargetFramework=net6.0-windows10.0.19041
+        run: msbuild src/MauiBeach/MauiBeach.csproj -r -p:Configuration=Release -p:RestorePackages=false -p:TargetFramework=net6.0-windows10.0.19041
 
       - name: Upload Windows Artifact
         uses: actions/upload-artifact@v2.3.1
