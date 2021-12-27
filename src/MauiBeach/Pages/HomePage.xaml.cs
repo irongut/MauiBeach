@@ -1,12 +1,11 @@
 ﻿using Microsoft.Maui.Controls;
 
-namespace MauiBeach.Pages
+namespace MauiBeach.Pages;
+
+public partial class HomePage : ContentPage
 {
-    public partial class HomePage : ContentPage
+    public HomePage()
     {
-        public HomePage()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

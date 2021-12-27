@@ -1,12 +1,11 @@
 ﻿using Application = Microsoft.Maui.Controls.Application;
 
-namespace MauiBeach
+namespace MauiBeach;
+
+public partial class App : Application
 {
-    public partial class App : Application
+    public App()
     {
-        public App()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

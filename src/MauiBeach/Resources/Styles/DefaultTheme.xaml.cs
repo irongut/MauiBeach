@@ -2,13 +2,12 @@
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Essentials;
 
-namespace MauiBeach.Resources.Styles
+namespace MauiBeach.Resources.Styles;
+
+public partial class DefaultTheme : ResourceDictionary
 {
-    public partial class DefaultTheme : ResourceDictionary
+    public DefaultTheme()
     {
-        public DefaultTheme()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }
