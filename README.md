@@ -6,7 +6,8 @@ A playground for experiments with .Net MAUI, development will be documented on m
 ## Blog Posts
 
 1. [First Steps on MAUI Beach](https://blog.taranissoftware.com/first-steps-on-maui-beach)
-2. Coming soon...
+2. [Upgrading to .NET MAUI Preview 11](https://blog.taranissoftware.com/upgrading-to-net-maui-preview-11)
+3. Coming soon...
 
 
 ## Useful Links
