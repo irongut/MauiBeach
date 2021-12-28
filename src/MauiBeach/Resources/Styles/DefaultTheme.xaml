@@ -8,11 +8,11 @@
     <Color x:Key="pageBackgroundColor">#2E3440</Color>
     <Color x:Key="pageForegroundColor">#434C5E</Color>
 
-    <Color x:Key="textColor">#D8DEE9</Color>
+    <Color x:Key="textColor">#E5E9F0</Color>
     <Color x:Key="strongTextColor">#ECEFF4</Color>
     <Color x:Key="altTextColor">White</Color>
     <Color x:Key="darkTextColor">#2E3440</Color>
-    <Color x:Key="lightTextColor">#D8DEE9</Color>
+    <Color x:Key="lightTextColor">#E5E9F0</Color>
     <Color x:Key="disabledTextColor">DarkGray</Color>
     
     <Color x:Key="primaryColor">#BF616A</Color>
