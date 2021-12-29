@@ -32,7 +32,7 @@
                     VerticalOptions="FillAndExpand"
                     Padding="10, 10">
 
-            <Grid RowDefinitions="Auto, 70"
+            <Grid RowDefinitions="Auto, 70, Auto, 60, 60"
                   RowSpacing="20">
 
                 <Label Grid.Row="0"
@@ -55,6 +55,26 @@
                            VerticalOptions="Center"/>
 
                 </Grid>
+
+                <Label Grid.Row="2"
+                       Text="{Binding Description, Mode=OneTime}"
+                       HorizontalOptions="Center"/>
+
+                <Button Grid.Row="3"
+                        Text="👩‍💻 irongut/MauiBeach"
+                        FontSize="20"
+                        Command="{Binding GitHubCommand, Mode=OneTime}"
+                        HeightRequest="60"
+                        WidthRequest="300"
+                        HorizontalOptions="Center"/>
+
+                <Button Grid.Row="4"
+                        Text="⛵ Sailing the Sharp Sea"
+                        FontSize="20"
+                        Command="{Binding BlogCommand, Mode=OneTime}"
+                        HeightRequest="60"
+                        WidthRequest="300"
+                        HorizontalOptions="Center"/>
 
             </Grid>
             
