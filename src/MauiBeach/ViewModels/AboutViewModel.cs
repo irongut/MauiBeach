@@ -1,4 +1,5 @@
-﻿using Microsoft.Maui.Essentials;
+﻿using MauiBeach.Services;
+using Microsoft.Maui.Essentials;
 using System;
 using System.Text;
 
@@ -13,9 +14,9 @@ internal class AboutViewModel
         get
         {
             StringBuilder platform = new();
-            platform.Append("Platform: ").Append(DeviceInfo.Platform).Append(' ').AppendLine(DeviceInfo.VersionString);
+            platform.Append("Platform: ").AppendLine(DeviceInfoService.Platform());
             platform.Append("Manufacturer: ").AppendLine(DeviceInfo.Manufacturer);
-            platform.Append("Device: ").AppendLine(DeviceInfo.Model);
+            platform.Append("Device: ").AppendLine(DeviceInfoService.Model());
 
             return platform.ToString();
         }
