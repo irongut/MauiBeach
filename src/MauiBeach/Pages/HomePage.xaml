@@ -4,11 +4,15 @@
              x:Class="MauiBeach.Pages.HomePage"
              Title="Home">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Spacing="20">
+            
             <Label Text="Home Page"
                    FontSize="Large"
-                   VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand"/>
+                   HorizontalOptions="Center"/>
+
+            <Image Source="https://api.taranissoftware.com/images/maui-webp-image-test.webp"
+                   HorizontalOptions="Fill"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
