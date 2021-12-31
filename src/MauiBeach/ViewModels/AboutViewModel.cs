@@ -42,9 +42,9 @@ internal class AboutViewModel
         {
             await Browser.OpenAsync(new Uri("https://blog.taranissoftware.com/"), BrowserLaunchMode.External).ConfigureAwait(false);
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            throw;
+            await Shell.Current.DisplayAlert("Error!", ex.Message, "OK").ConfigureAwait(false);
         }
     }
 
@@ -54,9 +54,9 @@ internal class AboutViewModel
         {
             await Browser.OpenAsync(new Uri("https://github.com/irongut/MauiBeach"), BrowserLaunchMode.External).ConfigureAwait(false);
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            throw;
+            await Shell.Current.DisplayAlert("Error!", ex.Message, "OK").ConfigureAwait(false);
         }
     }
 }
