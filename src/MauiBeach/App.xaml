@@ -59,8 +59,8 @@
 
             <Shell.FlyoutFooter>
                 <Grid BackgroundColor="{StaticResource primaryColor}"
-                      HeightRequest="32"
-                      Padding="0, 5, 0, 5">
+                      HeightRequest="{OnPlatform iOS=52, Default=32}"
+                      Padding="{OnPlatform iOS='0, 5, 0, 25', Default='0, 5, 0, 5'}">
 
                     <Label Text="Copyright © 2021 Taranis Software"
                            TextColor="{StaticResource altTextColor}"

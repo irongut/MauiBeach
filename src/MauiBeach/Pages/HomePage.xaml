@@ -1,14 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MauiBeach.ViewModels"
              x:Class="MauiBeach.Pages.HomePage"
+             x:DataType="vm:HomeViewModel"
              Title="Home">
     <ContentPage.Content>
-        <StackLayout>
+        <VerticalStackLayout Spacing="20">
+            
             <Label Text="Home Page"
                    FontSize="Large"
-                   VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand"/>
-        </StackLayout>
+                   HorizontalOptions="Center"/>
+
+            <Image Source="https://api.taranissoftware.com/images/maui-webp-image-test.webp"
+                   HeightRequest="200"
+                   HorizontalOptions="Center"/>
+
+            <Button Text="🚨 Alert!"
+                    FontSize="20"
+                    Command="{Binding AlertCommand, Mode=OneTime}"
+                    HeightRequest="60"
+                    WidthRequest="300"
+                    HorizontalOptions="Center"/>
+
+            <Button Text="🍱 Action Sheet"
+                    FontSize="20"
+                    Command="{Binding ActionSheetCommand, Mode=OneTime}"
+                    HeightRequest="60"
+                    WidthRequest="300"
+                    HorizontalOptions="Center"/>
+
+            <Button Text="👋 Prompt"
+                    FontSize="20"
+                    Command="{Binding PromptCommand, Mode=OneTime}"
+                    HeightRequest="60"
+                    WidthRequest="300"
+                    HorizontalOptions="Center"/>
+
+        </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>
