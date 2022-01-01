@@ -13,11 +13,26 @@
                    HorizontalOptions="Center"/>
 
             <Image Source="https://api.taranissoftware.com/images/maui-webp-image-test.webp"
-                   HorizontalOptions="Fill"/>
+                   HeightRequest="200"
+                   HorizontalOptions="Center"/>
 
             <Button Text="🚨 Alert!"
                     FontSize="20"
                     Command="{Binding AlertCommand, Mode=OneTime}"
+                    HeightRequest="60"
+                    WidthRequest="300"
+                    HorizontalOptions="Center"/>
+
+            <Button Text="🍱 Action Sheet"
+                    FontSize="20"
+                    Command="{Binding ActionSheetCommand, Mode=OneTime}"
+                    HeightRequest="60"
+                    WidthRequest="300"
+                    HorizontalOptions="Center"/>
+
+            <Button Text="👋 Prompt"
+                    FontSize="20"
+                    Command="{Binding PromptCommand, Mode=OneTime}"
                     HeightRequest="60"
                     WidthRequest="300"
                     HorizontalOptions="Center"/>
