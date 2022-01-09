@@ -4,39 +4,61 @@
              xmlns:vm="clr-namespace:MauiBeach.ViewModels"
              x:Class="MauiBeach.Pages.HomePage"
              x:DataType="vm:HomeViewModel"
-             Title="Home">
+             Title="Home"
+             Padding="0">
     <ContentPage.Content>
-        <VerticalStackLayout Spacing="20">
-            
-            <Label Text="Home Page"
-                   FontSize="Large"
-                   HorizontalOptions="Center"/>
+        <ScrollView Padding="20, 10, 20, 20">
+            <VerticalStackLayout Spacing="20">
 
-            <Image Source="https://api.taranissoftware.com/images/maui-webp-image-test.webp"
-                   HeightRequest="200"
-                   HorizontalOptions="Center"/>
+                <Label Text="Home Page"
+                       FontSize="Large"
+                       HorizontalOptions="Center"/>
 
-            <Button Text="🚨 Alert!"
-                    FontSize="20"
-                    Command="{Binding AlertCommand, Mode=OneTime}"
-                    HeightRequest="60"
-                    WidthRequest="300"
-                    HorizontalOptions="Center"/>
+                <Image Source="https://api.taranissoftware.com/images/maui-webp-image-test.webp"
+                       HeightRequest="200"
+                       HorizontalOptions="Center"/>
 
-            <Button Text="🍱 Action Sheet"
-                    FontSize="20"
-                    Command="{Binding ActionSheetCommand, Mode=OneTime}"
-                    HeightRequest="60"
-                    WidthRequest="300"
-                    HorizontalOptions="Center"/>
+                <Button Text="🚨 Alert!"
+                        FontSize="20"
+                        Command="{Binding AlertCommand, Mode=OneTime}"
+                        HeightRequest="60"
+                        WidthRequest="300"
+                        HorizontalOptions="Center"/>
 
-            <Button Text="👋 Prompt"
-                    FontSize="20"
-                    Command="{Binding PromptCommand, Mode=OneTime}"
-                    HeightRequest="60"
-                    WidthRequest="300"
-                    HorizontalOptions="Center"/>
+                <Button Text="🍱 Action Sheet"
+                        FontSize="20"
+                        Command="{Binding ActionSheetCommand, Mode=OneTime}"
+                        HeightRequest="60"
+                        WidthRequest="300"
+                        HorizontalOptions="Center"/>
 
-        </VerticalStackLayout>
+                <Button Text="👋 Prompt"
+                        FontSize="20"
+                        Command="{Binding PromptCommand, Mode=OneTime}"
+                        HeightRequest="60"
+                        WidthRequest="300"
+                        HorizontalOptions="Center"/>
+
+                <Label Text="{Binding CacheValue, StringFormat='Cache: {0}'}"
+                       FontSize="20"
+                       HorizontalTextAlignment="Center"
+                       HorizontalOptions="Fill"/>
+
+                <Button Text="🐵 Update Cache"
+                        FontSize="20"
+                        Command="{Binding UpdateCacheCommand, Mode=OneTime}"
+                        HeightRequest="60"
+                        WidthRequest="300"
+                        HorizontalOptions="Center"/>
+
+                <Button Text="🙈 Clear Cache"
+                        FontSize="20"
+                        Command="{Binding ClearCacheCommand, Mode=OneTime}"
+                        HeightRequest="60"
+                        WidthRequest="300"
+                        HorizontalOptions="Center"/>
+
+            </VerticalStackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
