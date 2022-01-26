@@ -1,13 +1,14 @@
 # MAUI Beach
 
-A playground for experiments with .Net MAUI, development will be documented on my blog.
+A playground for experiments with .Net MAUI, development will be documented on my blog [Sailing the Sharp Sea](https://blog.taranissoftware.com/).
 
 
 ## Blog Posts
 
 1. [First Steps on MAUI Beach](https://blog.taranissoftware.com/first-steps-on-maui-beach)
 2. [Upgrading to .NET MAUI Preview 11](https://blog.taranissoftware.com/upgrading-to-net-maui-preview-11)
-3. Coming soon...
+3. [Building .NET MAUI apps with GitHub Actions](https://blog.taranissoftware.com/building-net-maui-apps-with-github-actions)
+4. Coming soon...
 
 
 ## Useful Links
@@ -18,3 +19,4 @@ A playground for experiments with .Net MAUI, development will be documented on m
 - [Official Documentation](https://docs.microsoft.com/dotnet/maui/)
 - [MAUI Dev Blogs](https://devblogs.microsoft.com/dotnet/category/maui/)
 - [MAUI Preview 11 Release Notes](https://github.com/dotnet/maui/releases/tag/6.0.101-preview.11.3)
+- [MAUI Preview 12 Dev Blog](https://devblogs.microsoft.com/dotnet/announcing-net-maui-preview-12/)
