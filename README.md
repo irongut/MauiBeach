@@ -8,7 +8,8 @@ A playground for experiments with .Net MAUI, development will be documented on m
 1. [First Steps on MAUI Beach](https://blog.taranissoftware.com/first-steps-on-maui-beach)
 2. [Upgrading to .NET MAUI Preview 11](https://blog.taranissoftware.com/upgrading-to-net-maui-preview-11)
 3. [Building .NET MAUI apps with GitHub Actions](https://blog.taranissoftware.com/building-net-maui-apps-with-github-actions)
-4. Coming soon...
+4. [Platform Specific Code using Partial Classes in .NET MAUI](https://blog.taranissoftware.com/platform-specific-code-using-partial-classes-in-net-maui) 
+5. Coming soon...
 
 
 ## Useful Links
