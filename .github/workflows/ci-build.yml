@@ -50,7 +50,7 @@ jobs:
         run: dotnet build src/MauiBeach/MauiBeach.csproj -c Release -f net6.0-android --no-restore
 
       - name: Upload Android Artifact
-        uses: actions/upload-artifact@v2.3.1
+        uses: actions/upload-artifact@v3
         with:
           name: android-ci-build
           path: src/MauiBeach/bin/Release/net6.0-android/*Signed.a*
@@ -85,7 +85,7 @@ jobs:
         run: msbuild src/MauiBeach/MauiBeach.csproj -r -p:Configuration=Release -p:RestorePackages=false -p:TargetFramework=net6.0-windows10.0.19041 /p:GenerateAppxPackageOnBuild=true
 
       - name: Upload Windows Artifact
-        uses: actions/upload-artifact@v2.3.1
+        uses: actions/upload-artifact@v3
         with:
           name: windows-ci-build
           path: src/MauiBeach/bin/Release/net6.0-windows*/**/MauiBeach*.msix
@@ -116,7 +116,7 @@ jobs:
         run: dotnet build src/MauiBeach/MauiBeach.csproj -c Release -f net6.0-ios --no-restore
 
       - name: Upload iOS Artifact
-        uses: actions/upload-artifact@v2.3.1
+        uses: actions/upload-artifact@v3
         with:
           name: ios-ci-build
           path: src/MauiBeach/bin/Release/net6.0-ios/**/*.app/
@@ -147,7 +147,7 @@ jobs:
         run: dotnet build src/MauiBeach/MauiBeach.csproj -c Release -f net6.0-maccatalyst --no-restore
 
       - name: Upload MacCatalyst Artifact
-        uses: actions/upload-artifact@v2.3.1
+        uses: actions/upload-artifact@v3
         with:
           name: macos-ci-build
           path: src/MauiBeach/bin/Release/net6.0-maccatalyst/**/*.app/
