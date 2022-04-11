@@ -25,7 +25,7 @@ jobs:
           dotnet-version: 6.0.x
           include-prerelease: true
           
-      - uses: actions/setup-java@v2
+      - uses: actions/setup-java@v3
         with:
           distribution: 'microsoft'
           java-version: '11'
