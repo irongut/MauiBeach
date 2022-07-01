@@ -1,7 +1,5 @@
 ﻿using Foundation;
-using Microsoft.Maui.Essentials;
 using ObjCRuntime;
-using System;
 using System.Runtime.InteropServices;
 using UIKit;
 
@@ -14,7 +12,7 @@ internal static partial class DeviceInfoService
     private const string HardwareProperty = "hw.machine";
 
     [DllImport(Constants.SystemLibrary)]
-    private static extern int sysctlbyname([MarshalAs(UnmanagedType.LPStr)] string property,
+    private static extern int sysctlbyname([MarshalAs(UnmanagedType.LPWStr)] string property,
                                             IntPtr output,
                                             IntPtr oldLen,
                                             IntPtr newp,

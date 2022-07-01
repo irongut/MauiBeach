@@ -1,5 +1,4 @@
-﻿using MauiBeach.ViewModels;
-using Microsoft.Maui.Controls;
+using MauiBeach.ViewModels;
 
 namespace MauiBeach.Pages;
 

@@ -1,9 +1,5 @@
 ﻿using MauiBeach.Services;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Essentials;
-using System;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace MauiBeach.ViewModels;

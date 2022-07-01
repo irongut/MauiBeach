@@ -1,5 +1,4 @@
-﻿using Microsoft.Maui.Controls;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Windows.Input;
 
 namespace MauiBeach.ViewModels;
