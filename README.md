@@ -1,6 +1,6 @@
 # MAUI Beach
 
-A playground for experiments with .Net MAUI, development is documented on my blog [Sailing the Sharp Sea](https://blog.taranissoftware.com/series/xamarin-maui).
+A playground for experiments with .NET MAUI, development is documented on my blog [Sailing the Sharp Sea](https://blog.taranissoftware.com/series/xamarin-maui).
 
 
 ## Blog Posts
