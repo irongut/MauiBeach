@@ -77,7 +77,7 @@ jobs:
         run: dotnet restore src/MauiBeach/MauiBeach.csproj
 
       - name: Build MAUI Windows
-        run: dotnet build src/MauiBeach/MauiBeach.csproj -r -p:Configuration=Release -p:RestorePackages=false -p:TargetFramework=net6.0-windows10.0.19041 /p:GenerateAppxPackageOnBuild=true
+        run: dotnet build src/MauiBeach/MauiBeach.csproj -c Release -f net6.0-windows10.0.19041.0 --no-restore
 
       - name: Upload Windows Artifact
         uses: actions/upload-artifact@v3.0.0
