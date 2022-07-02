@@ -9,9 +9,9 @@ internal class AboutViewModel
     public ICommand BlogCommand { get; }
     public ICommand GitHubCommand { get; }
 
-    public string AppVersion => $"Version: {AppInfo.VersionString}{Environment.NewLine}Copyright © 2021 Taranis Software";
+    public string AppVersion => $"Version: {AppInfo.VersionString}{Environment.NewLine}Copyright © 2021 - 2022 Taranis Software";
 
-    public string Description => "A playground for experiments with .Net MAUI. All code is available on GitHub and development is documented on my blog 'Sailing the Sharp Sea'.";
+    public string Description => "A playground for experiments with .NET MAUI. All code is available on GitHub and development is documented on my blog 'Sailing the Sharp Sea'.";
 
     public string Platform
     {
