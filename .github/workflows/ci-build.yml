@@ -83,7 +83,7 @@ jobs:
         uses: actions/upload-artifact@v3.0.0
         with:
           name: windows-ci-build
-          path: src/MauiBeach/bin/Release/net6.0-windows*/**/MauiBeach*.msix
+          path: src/MauiBeach/bin/Release/net6.0-windows*/win10-x64/AppPackages/MauiBeach*/MauiBeach*.msix
 
 # MAUI iOS Build
   build-ios:
@@ -114,7 +114,7 @@ jobs:
         uses: actions/upload-artifact@v3.0.0
         with:
           name: ios-ci-build
-          path: src/MauiBeach/bin/Release/**/*.app
+          path: src/MauiBeach/bin/Release/net6.0-ios/iossimulator-x64/**/*.app
 
 # MAUI MacCatalyst Build
   build-mac:
@@ -145,4 +145,4 @@ jobs:
         uses: actions/upload-artifact@v3.0.0
         with:
           name: macos-ci-build
-          path: src/MauiBeach/bin/Release/**/*.pkg
+          path: src/MauiBeach/bin/Release/net6.0-maccatalyst/maccatalyst-x64/publish/*.pkg
