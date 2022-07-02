@@ -114,7 +114,7 @@ jobs:
         uses: actions/upload-artifact@v3.0.0
         with:
           name: ios-ci-build
-          path: src/MauiBeach/bin/Release/net6.0-ios/**/*.app/
+          path: src/MauiBeach/bin/Release/**/*.app
 
 # MAUI MacCatalyst Build
   build-mac:
@@ -145,4 +145,4 @@ jobs:
         uses: actions/upload-artifact@v3.0.0
         with:
           name: macos-ci-build
-          path: src/MauiBeach/bin/Release/net6.0-maccatalyst/**/*.app/
+          path: src/MauiBeach/bin/Release/**/*.pkg
