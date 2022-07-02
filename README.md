@@ -15,9 +15,10 @@ A playground for experiments with .Net MAUI, development will be documented on m
 ## Useful Links
 
 - [dotnet/maui](https://github.com/dotnet/maui)
-- [MAUI Status](https://github.com/dotnet/maui/wiki/status)
 - [MAUI Roadmap](https://github.com/dotnet/maui/wiki/Roadmap)
 - [Official Documentation](https://docs.microsoft.com/dotnet/maui/)
 - [MAUI Dev Blogs](https://devblogs.microsoft.com/dotnet/category/maui/)
-- [MAUI Preview 11 Release Notes](https://github.com/dotnet/maui/releases/tag/6.0.101-preview.11.3)
-- [MAUI Preview 12 Dev Blog](https://devblogs.microsoft.com/dotnet/announcing-net-maui-preview-12/)
+- [Introducing .NET MAUI – One Codebase, Many Platforms](https://devblogs.microsoft.com/dotnet/introducing-dotnet-maui-one-codebase-many-platforms/) (GA release blog)
+- [Performance Improvements in .NET MAUI](https://devblogs.microsoft.com/dotnet/performance-improvements-in-dotnet-maui/)
+- [New Resources to Get Started with .NET MAUI](https://devblogs.microsoft.com/dotnet/learn-dotnet-maui/)
+- [Getting Started with DevOps and .NET MAUI](https://devblogs.microsoft.com/dotnet/devops-for-dotnet-maui/)

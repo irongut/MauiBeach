@@ -1,6 +1,4 @@
-﻿using Microsoft.Maui.Essentials;
-
-namespace MauiBeach.Services;
+﻿namespace MauiBeach.Services;
 
 internal static partial class DeviceInfoService
 {

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiBeach.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiBeach"
+    xmlns:p="clr-namespace:MauiBeach.Pages"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.FlyoutHeaderBehavior="Fixed"
+    Shell.FlyoutVerticalScrollMode="Auto">
+    
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="{StaticResource primaryColor}"
+              HeightRequest="220"
+              Padding="0, 10">
+            
+            <Image Source="wave_icon.png"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   HeightRequest="200"
+                   WidthRequest="200"/>
+
+            <Label Text="MAUI Beach"
+                   TextColor="{StaticResource darkTextColor}"
+                   FontSize="42"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="End"/>
+
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions="85, *"
+                  Style="{StaticResource shellItem}"
+                  Padding="0, 10">
+
+                <Image Grid.Column="0"
+                       Source="{Binding FlyoutIcon}"
+                       HeightRequest="45"
+                       HorizontalOptions="Center"/>
+
+                <Label Grid.Column="1"
+                       Text="{Binding Title}"
+                       TextColor="White"
+                       FontSize="Large"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"/>
+
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <Shell.FlyoutFooter>
+        <Grid BackgroundColor="{StaticResource primaryColor}"
+              HeightRequest="{OnPlatform iOS=52, Default=32}"
+              Padding="{OnPlatform iOS='0, 5, 0, 25', Default='0, 5, 0, 5'}">
+
+            <Label Text="© 2021 - 2022 Taranis Software"
+                   TextColor="{StaticResource altTextColor}"
+                   FontSize="Small"
+                   HorizontalOptions="Center"/>
+
+        </Grid>
+    </Shell.FlyoutFooter>
+
+    <Shell.FlyoutBackdrop>
+        <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="0,1">
+            <GradientStop Color="{StaticResource primaryColor}"
+                          Offset="0.3"/>
+            <GradientStop Color="{StaticResource secondaryColor}"
+                          Offset="1.0"/>
+        </LinearGradientBrush>
+    </Shell.FlyoutBackdrop>
+
+    <FlyoutItem Title="Home"
+                Icon="home.png">
+        <ShellContent ContentTemplate="{DataTemplate p:HomePage}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Settings"
+                Icon="settings.png">
+        <ShellContent ContentTemplate="{DataTemplate p:SettingsPage}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="About"
+                Icon="about.png">
+        <ShellContent ContentTemplate="{DataTemplate p:AboutPage}"/>
+    </FlyoutItem>
+
+</Shell>

@@ -1,25 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-                    x:Class="MauiBeach.Resources.Styles.DefaultTheme">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <!-- Colour Palette -->
-    
-    <Color x:Key="pageBackgroundColor">#2E3440</Color>
-    <Color x:Key="pageForegroundColor">#434C5E</Color>
-
-    <Color x:Key="textColor">#E5E9F0</Color>
-    <Color x:Key="strongTextColor">#ECEFF4</Color>
-    <Color x:Key="altTextColor">White</Color>
-    <Color x:Key="darkTextColor">#2E3440</Color>
-    <Color x:Key="lightTextColor">#E5E9F0</Color>
-    <Color x:Key="disabledTextColor">DarkGray</Color>
-    
-    <Color x:Key="primaryColor">#BF616A</Color>
-    <Color x:Key="secondaryColor">#D08770</Color>
-    <Color x:Key="tertiaryColor">#A3BE8C</Color>
-
-    <!-- Styles -->
+    <!-- Pages -->
 
     <Style TargetType="Page"
            ApplyToDerivedTypes="True">
@@ -31,13 +16,26 @@
 
     <Style TargetType="NavigationPage"
            ApplyToDerivedTypes="True">
-        <Setter Property="BackgroundColor"
-                Value="{StaticResource pageBackgroundColor}"/>
         <Setter Property="BarBackgroundColor"
-                Value="{StaticResource primaryColor}"/>
+                Value="{StaticResource primaryColor}" />
         <Setter Property="BarTextColor"
-                Value="{StaticResource altTextColor}"/>
+                Value="{StaticResource altTextColor}" />
+        <Setter Property="IconColor"
+                Value="{StaticResource altTextColor}" />
     </Style>
+
+    <Style TargetType="TabbedPage">
+        <Setter Property="BarBackgroundColor"
+                Value="{StaticResource primaryColor}" />
+        <Setter Property="BarTextColor"
+                Value="{StaticResource altTextColor}" />
+        <Setter Property="UnselectedTabColor"
+                Value="{StaticResource disabledTextColor}" />
+        <Setter Property="SelectedTabColor"
+                Value="{StaticResource altTextColor}" />
+    </Style>
+
+    <!-- Controls -->
 
     <Style TargetType="Label">
         <Setter Property="TextColor"
@@ -61,8 +59,8 @@
 
     <!-- Shell -->
 
-    <Style x:Key="BaseStyle"
-           TargetType="Element">
+    <Style TargetType="Shell"
+           ApplyToDerivedTypes="True">
         <Setter Property="Shell.FlyoutBackground"
                 Value="{StaticResource pageBackgroundColor}"/>
         <Setter Property="Shell.FlyoutBackgroundColor"
@@ -79,6 +77,8 @@
                 Value="{StaticResource disabledTextColor}"/>
         <Setter Property="Shell.TabBarBackgroundColor"
                 Value="{StaticResource primaryColor}"/>
+        <Setter Property="Shell.TabBarForegroundColor"
+                Value="{StaticResource altTextColor}"/>
         <Setter Property="Shell.TabBarTitleColor"
                 Value="{StaticResource altTextColor}"/>
         <Setter Property="Shell.TabBarUnselectedColor"
@@ -86,10 +86,6 @@
         <Setter Property="Shell.NavBarHasShadow"
                 Value="True"/>
     </Style>
-
-    <Style BasedOn="{StaticResource BaseStyle}"
-           ApplyToDerivedTypes="True"
-           TargetType="FlyoutItem"/>
 
     <Style x:Key="shellItem"
            TargetType="Grid">
