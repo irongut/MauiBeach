@@ -83,7 +83,7 @@ jobs:
         uses: actions/upload-artifact@v3.0.0
         with:
           name: windows-ci-build
-          path: src/MauiBeach/bin/Release/net6.0-windows*/win10-x64/AppPackages/MauiBeach*/MauiBeach*.msix
+          path: src/MauiBeach/bin/Release/net6.0-windows10.0.19041.0/win10-x64/AppPackages/MauiBeach*/MauiBeach*.msix
 
 # MAUI iOS Build
   build-ios:
