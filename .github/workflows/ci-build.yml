@@ -31,17 +31,9 @@ jobs:
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: 6.0.x
-          include-prerelease: true
           
-      - uses: actions/setup-java@v3
-        with:
-          distribution: 'microsoft'
-          java-version: '11'
-
-      - name: Install MAUI Workloads
-        run: |
-          dotnet workload install android --ignore-failed-sources
-          dotnet workload install maui --ignore-failed-sources
+      - name: Install MAUI Workload
+        run: dotnet workload install maui --ignore-failed-sources
 
       - name: Restore Dependencies
         run: dotnet restore src/MauiBeach/MauiBeach.csproj
@@ -52,7 +44,7 @@ jobs:
       - name: Upload Android Artifact
         uses: actions/upload-artifact@v3.1.0
         with:
-          name: android-ci-build
+          name: mauibeach-android-ci-build
           path: src/MauiBeach/bin/Release/net6.0-android/*Signed.a*
 
 # MAUI Windows Build
@@ -67,11 +59,9 @@ jobs:
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: 6.0.x
-          include-prerelease: true
 
-      - name: Install MAUI Workloads
-        run: |
-          dotnet workload install maui --ignore-failed-sources
+      - name: Install MAUI Workload
+        run: dotnet workload install maui --ignore-failed-sources
 
       - name: Restore Dependencies
         run: dotnet restore src/MauiBeach/MauiBeach.csproj
@@ -82,7 +72,7 @@ jobs:
       - name: Upload Windows Artifact
         uses: actions/upload-artifact@v3.1.0
         with:
-          name: windows-ci-build
+          name: mauibeach-windows-ci-build
           path: src/MauiBeach/bin/Release/net6.0-windows10.0.19041.0/win10-x64/AppPackages/MauiBeach*/MauiBeach*.msix
 
 # MAUI iOS Build
@@ -97,23 +87,20 @@ jobs:
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: 6.0.x
-          include-prerelease: true
 
-      - name: Install MAUI Workloads
-        run: |
-          dotnet workload install ios --ignore-failed-sources
-          dotnet workload install maui --ignore-failed-sources
+      - name: Install MAUI Workload
+        run: dotnet workload install maui --ignore-failed-sources
 
       - name: Restore Dependencies
         run: dotnet restore src/MauiBeach/MauiBeach.csproj
 
       - name: Build MAUI iOS
-        run: dotnet build src/MauiBeach/MauiBeach.csproj -c Release -f net6.0-ios --no-restore /p:packageApp=false /p:buildForSimulator=true /p:ArchiveOnBuild=false
+        run: dotnet build src/MauiBeach/MauiBeach.csproj -c Release -f net6.0-ios --no-restore /p:buildForSimulator=True /p:packageApp=True /p:ArchiveOnBuild=False
 
       - name: Upload iOS Artifact
         uses: actions/upload-artifact@v3.1.0
         with:
-          name: ios-ci-build
+          name: mauibeach-ios-ci-build
           path: src/MauiBeach/bin/Release/net6.0-ios/iossimulator-x64/**/*.app
 
 # MAUI MacCatalyst Build
@@ -128,12 +115,9 @@ jobs:
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: 6.0.x
-          include-prerelease: true
 
-      - name: Install MAUI Workloads
-        run: |
-          dotnet workload install maccatalyst --ignore-failed-sources
-          dotnet workload install maui --ignore-failed-sources
+      - name: Install MAUI Workload
+        run: dotnet workload install maui --ignore-failed-sources
 
       - name: Restore Dependencies
         run: dotnet restore src/MauiBeach/MauiBeach.csproj
@@ -144,5 +128,5 @@ jobs:
       - name: Upload MacCatalyst Artifact
         uses: actions/upload-artifact@v3.1.0
         with:
-          name: macos-ci-build
+          name: mauibeach-macos-ci-build
           path: src/MauiBeach/bin/Release/net6.0-maccatalyst/maccatalyst-x64/publish/*.pkg
