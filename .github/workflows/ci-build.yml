@@ -31,17 +31,9 @@ jobs:
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: 6.0.x
-          include-prerelease: true
           
-      - uses: actions/setup-java@v3
-        with:
-          distribution: 'microsoft'
-          java-version: '11'
-
-      - name: Install MAUI Workloads
-        run: |
-          dotnet workload install android --ignore-failed-sources
-          dotnet workload install maui --ignore-failed-sources
+      - name: Install MAUI Workload
+        run: dotnet workload install maui --ignore-failed-sources
 
       - name: Restore Dependencies
         run: dotnet restore src/MauiBeach/MauiBeach.csproj
@@ -52,7 +44,7 @@ jobs:
       - name: Upload Android Artifact
         uses: actions/upload-artifact@v3.1.0
         with:
-          name: android-ci-build
+          name: mauibeach-android-ci-build
           path: src/MauiBeach/bin/Release/net6.0-android/*Signed.a*
 
 # MAUI Windows Build
@@ -67,11 +59,9 @@ jobs:
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: 6.0.x
-          include-prerelease: true
 
-      - name: Install MAUI Workloads
-        run: |
-          dotnet workload install maui --ignore-failed-sources
+      - name: Install MAUI Workload
+        run: dotnet workload install maui --ignore-failed-sources
 
       - name: Restore Dependencies
         run: dotnet restore src/MauiBeach/MauiBeach.csproj
@@ -97,12 +87,9 @@ jobs:
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: 6.0.x
-          include-prerelease: true
 
-      - name: Install MAUI Workloads
-        run: |
-          dotnet workload install ios --ignore-failed-sources
-          dotnet workload install maui --ignore-failed-sources
+      - name: Install MAUI Workload
+        run: dotnet workload install maui --ignore-failed-sources
 
       - name: Restore Dependencies
         run: dotnet restore src/MauiBeach/MauiBeach.csproj
@@ -128,12 +115,9 @@ jobs:
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: 6.0.x
-          include-prerelease: true
 
-      - name: Install MAUI Workloads
-        run: |
-          dotnet workload install maccatalyst --ignore-failed-sources
-          dotnet workload install maui --ignore-failed-sources
+      - name: Install MAUI Workload
+        run: dotnet workload install maui --ignore-failed-sources
 
       - name: Restore Dependencies
         run: dotnet restore src/MauiBeach/MauiBeach.csproj
